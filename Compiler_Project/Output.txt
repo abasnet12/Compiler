@@ -1,0 +1,11 @@
+Ambar Basnet CS4100 Homework 1, Fall 2022
+The Code for 'over' is 8
+The Code for 'DOG' is 5
+The Code for 'Cat' is 15
+The Code for 'gone' is -1
+
+The Name for 11 is APPLE
+The Name for 5 is Dog
+The Name for 8 is Over
+The Name for 28 is 
+Saving Printed Table to Reserve.txt

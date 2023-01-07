@@ -1,0 +1,13 @@
+Index    Name                Use       Typ     Value
+  0     -1                    C         I       -1
+  1     1                     C         I       1
+  2     GOOD3B                P         I       0
+  3     COUNT                 v         I       0
+  4     TOTAL                 v         I       0
+  5     I                     v         I       0
+  6     STOP                  v         I       0
+  7     12                    c         I       12
+  8     @0                    V         I       0
+  9     @1                    V         I       0
+ 10     20                    c         I       20
+ 11     15                    c         I       15

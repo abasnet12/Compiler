@@ -1,0 +1,218 @@
+Lexical for C:\Users\ambar\eclipse-workspace\Compiler_Project\LexicalTestFA22.txt
+0001 
+0002 
+0003 
+0004 
+0005 {Here is Lexical Test file 1 # *) which 
+0006   has a comment that
+0007   spans 3 lines, followed by an empty comment }
+0008 {}
+0009 
+0010 amount:=1;
+	IDENT | 	0050 | 	amount
+	ASSIG | 	0037 | 	:=
+	INCON | 	0051 | 	1
+	SEMCO | 	0036 | 	;
+0011 b:=a+b-c*21.7/22;
+	IDENT | 	0050 | 	b
+	ASSIG | 	0037 | 	:=
+	IDENT | 	0050 | 	a
+	ADDTN | 	0032 | 	+
+	IDENT | 	0050 | 	b
+	SUBTN | 	0033 | 	-
+	IDENT | 	0050 | 	c
+	ASTRK | 	0031 | 	*
+	FTCON | 	0052 | 	21.7
+	FSLAS | 	0030 | 	/
+	INCON | 	0051 | 	22
+	SEMCO | 	0036 | 	;
+0012      123456789112345 (*this number is 15 chars, truncate int to 6 *)
+Integer length > 6, truncated 123456789112345 to 123456
+	INCON | 	0051 | 	123456789112345
+0013      12.34567891134567 (*this number is 17 chars, but should be 
+Float length > 12, truncated 12.34567891134567 to 12.345678911
+	FTCON | 	0052 | 	12.34567891134567
+0014 	                     truncated to 12 in the symbol table*)
+0015 hereisareallylongidentifierthatistoolong := 66;
+Identifier length > 20, truncated hereisareallylongidentifierthatistoolong to hereisareallylongide
+
+
+	IDENT | 	0050 | 	hereisareallylongidentifierthatistoolong
+	ASSIG | 	0037 | 	:=
+	INCON | 	0051 | 	66
+	SEMCO | 	0036 | 	;
+0016 hereisareallylongidentifierthatissameasabovewhentruncated := 76.5E-12;
+Identifier length > 20, truncated hereisareallylongidentifierthatissameasabovewhentruncated to hereisareallylongide
+
+
+	IDENT | 	0050 | 	hereisareallylongidentifierthatissameasabovewhentruncated
+	ASSIG | 	0037 | 	:=
+	UNDEF | 	0099 | 	76.5E
+	SUBTN | 	0033 | 	-
+	INCON | 	0051 | 	12
+	SEMCO | 	0036 | 	;
+0017   109.E+10      12.33E5 
+	UNDEF | 	0099 | 	109.E
+	ADDTN | 	0032 | 	+
+	INCON | 	0051 | 	10
+	FTCON | 	0052 | 	12.33E5
+0018   12.4 E-2
+	FTCON | 	0052 | 	12.4
+	IDENT | 	0050 | 	E
+	SUBTN | 	0033 | 	-
+	INCON | 	0051 | 	2
+0019   
+0020    *) {<--Orphaned closed comment is just '*' and ')' returned as separate tokens}
+	ASTRK | 	0031 | 	*
+	CPARN | 	0035 | 	)
+0021            myString_1 : = "an unfinished string makes an error ;
+	IDENT | 	0050 | 	myString_1
+	COLON | 	0047 | 	:
+	EQUAL | 	0042 | 	=
+Unterminated String
+	UNDEF | 	0099 | 	an unfinished string makes an error ;
+0022   test single #and two char tokens 
+	IDENT | 	0050 | 	test
+	IDENT | 	0050 | 	single
+	UNDEF | 	0099 | 	#
+	IDENT | 	0050 | 	and
+	IDENT | 	0050 | 	two
+	IDENT | 	0050 | 	char
+	IDENT | 	0050 | 	tokens
+0023      # /*^&%+-  some more (   ) (**) ;:=><>=<==<>,[]:.
+	UNDEF | 	0099 | 	#
+	FSLAS | 	0030 | 	/
+	ASTRK | 	0031 | 	*
+	UNDEF | 	0099 | 	^
+	UNDEF | 	0099 | 	&
+	UNDEF | 	0099 | 	%
+	ADDTN | 	0032 | 	+
+	SUBTN | 	0033 | 	-
+	IDENT | 	0050 | 	some
+	IDENT | 	0050 | 	more
+	OPARN | 	0034 | 	(
+	CPARN | 	0035 | 	)
+	SEMCO | 	0036 | 	;
+	ASSIG | 	0037 | 	:=
+	GRTHN | 	0038 | 	>
+	NTEQL | 	0043 | 	<>
+	EQUAL | 	0042 | 	=
+	LTEQL | 	0041 | 	<=
+	EQUAL | 	0042 | 	=
+	NTEQL | 	0043 | 	<>
+	COMMA | 	0044 | 	,
+	OSQBR | 	0045 | 	[
+	CSQBR | 	0046 | 	]
+	COLON | 	0047 | 	:
+	PERIO | 	0048 | 	.
+0024 (* mixed in reserve words 
+0025 below........................... *)  "but first is a good string"
+	ST_12 | 	0053 | 	but first is a good string
+0026   GOTO JumpOut;  INTEGER TO DO
+	GO_TO | 	0000 | 	GOTO
+	IDENT | 	0050 | 	JumpOut
+	SEMCO | 	0036 | 	;
+	INTEG | 	0001 | 	INTEGER
+	TO_12 | 	0002 | 	TO
+	DO_12 | 	0003 | 	DO
+0027 	begin  if not then that else nothing
+	BEGIN | 	0011 | 	begin
+	IF_12 | 	0004 | 	if
+	IDENT | 	0050 | 	not
+	THEN_ | 	0005 | 	then
+	IDENT | 	0050 | 	that
+	ELSE_ | 	0006 | 	else
+	IDENT | 	0050 | 	nothing
+0028 THEN ELSE
+	THEN_ | 	0005 | 	THEN
+	ELSE_ | 	0006 | 	ELSE
+0029 For I := 1 to 100.E7 of float do
+	FOR_1 | 	0007 | 	For
+	IDENT | 	0050 | 	I
+	ASSIG | 	0037 | 	:=
+	INCON | 	0051 | 	1
+	TO_12 | 	0002 | 	to
+	FTCON | 	0052 | 	100.E7
+	OF_12 | 	0008 | 	of
+	FLOAT | 	0023 | 	float
+	DO_12 | 	0003 | 	do
+0030     WRITELN
+	WRTLN | 	0009 | 	WRITELN
+0031     BEGIN
+	BEGIN | 	0011 | 	BEGIN
+0032     END
+	END_1 | 	0012 | 	END
+0033   declare  ARRAY 
+	IDENT | 	0050 | 	declare
+	ARRAY | 	0025 | 	ARRAY
+0034    VAR DOWHILE  module UNIT Label  RePeaT  UNTIL done = TRUE;
+	VAR_1 | 	0013 | 	VAR
+	DOWHL | 	0014 | 	DOWHILE
+	IDENT | 	0050 | 	module
+	UNIT_ | 	0015 | 	UNIT
+	LABEL | 	0016 | 	Label
+	REPET | 	0017 | 	RePeaT
+	UNTIL | 	0018 | 	UNTIL
+	IDENT | 	0050 | 	done
+	EQUAL | 	0042 | 	=
+	IDENT | 	0050 | 	TRUE
+	SEMCO | 	0036 | 	;
+0035 
+0036  PROCEDURE  FUNCTION DOWNTO does READLN   RETURN
+	PRCDR | 	0019 | 	PROCEDURE
+	FNCTN | 	0021 | 	FUNCTION
+	DOWN2 | 	0020 | 	DOWNTO
+	IDENT | 	0050 | 	does
+	REDLN | 	0010 | 	READLN
+	RTURN | 	0022 | 	RETURN
+0037 	FLOAT
+	FLOAT | 	0023 | 	FLOAT
+0038 	STRING
+	STING | 	0024 | 	STRING
+0039 
+0040 Beginning not reserve writeln.   !@#$%^&*()_+
+	IDENT | 	0050 | 	Beginning
+	IDENT | 	0050 | 	not
+	IDENT | 	0050 | 	reserve
+	WRTLN | 	0009 | 	writeln
+	PERIO | 	0048 | 	.
+	UNDEF | 	0099 | 	!
+	UNDEF | 	0099 | 	@
+	UNDEF | 	0099 | 	#
+	UNDEF | 	0099 | 	$
+	UNDEF | 	0099 | 	%
+	UNDEF | 	0099 | 	^
+	UNDEF | 	0099 | 	&
+	ASTRK | 	0031 | 	*
+	OPARN | 	0034 | 	(
+	CPARN | 	0035 | 	)
+	UNDEF | 	0099 | 	_
+	ADDTN | 	0032 | 	+
+0041 sum := 0.0;
+	IDENT | 	0050 | 	sum
+	ASSIG | 	0037 | 	:=
+	FTCON | 	0052 | 	0.0
+	SEMCO | 	0036 | 	;
+0042 sum := sum + 2;
+	IDENT | 	0050 | 	sum
+	ASSIG | 	0037 | 	:=
+	IDENT | 	0050 | 	sum
+	ADDTN | 	0032 | 	+
+	INCON | 	0051 | 	2
+	SEMCO | 	0036 | 	;
+0043 What if 2. is found?
+	IDENT | 	0050 | 	What
+	IF_12 | 	0004 | 	if
+	FTCON | 	0052 | 	2.
+	IDENT | 	0050 | 	is
+	IDENT | 	0050 | 	found
+	UNDEF | 	0099 | 	?
+0044 
+0045 (* end of file comes
+0046    before the end of this 
+0047    comment-- Throw an Error!
+0048 
+0049 
+0050                      
+**** ERROR FOUND: Comment not terminated before End Of File
+Done.

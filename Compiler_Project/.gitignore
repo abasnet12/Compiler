@@ -1,0 +1,16 @@
+/Interpreter.class
+/Lexical$token.class
+/Lexical.class
+/LexicalReserve.class
+/QuadTable.class
+/ReserveTable$Element.class
+/ReserveTable.class
+/SymbolTable$DiffElements.class
+/SymbolTable.class
+/Syntactic.class
+/main_Interpreter.class
+/main_SyntacticA.class
+/main_codeGen.class
+/main_lexical.class
+/main_quad_symbol.class
+/test_main.class

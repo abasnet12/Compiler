@@ -1,0 +1,240 @@
+Parsing C:\Users\ambar\eclipse-workspace\Compiler_Project\CodeGenBASIC_FA22.txt
+0001 {This file includes the basic WRITELN, READLN, and EXPRESSION tests.
+C:\Users\ambar\eclipse-workspace\Compiler_Project\CodeGenBASIC_FA22
+0002 }
+0003 UNIT CodegenBASIC;
+	UNIT_ | 	0015 | 	UNIT
+--> Entering Program
+	IDENT | 	0050 | 	CodegenBASIC
+	SEMCO | 	0036 | 	;
+0004 begin
+	BEGIN | 	0011 | 	begin
+ --> Entering Block
+  --> Entering block-Body
+0005 WRITELN("BASIC TEST File FA22");
+	WRTLN | 	0009 | 	WRITELN
+   --> Entering Statement
+    --> Entering handleWriteln
+	OPARN | 	0034 | 	(
+	ST_12 | 	0053 | 	BASIC TEST File FA22
+	CPARN | 	0035 | 	)
+	SEMCO | 	0036 | 	;
+    <-- Exiting handleWriteln
+   <-- Exiting Statement
+0006 
+0007 WRITELN("String printout:  Hello World");
+	WRTLN | 	0009 | 	WRITELN
+   --> Entering Statement
+    --> Entering handleWriteln
+	OPARN | 	0034 | 	(
+	ST_12 | 	0053 | 	String printout:  Hello World
+	CPARN | 	0035 | 	)
+	SEMCO | 	0036 | 	;
+    <-- Exiting handleWriteln
+   <-- Exiting Statement
+0008 
+0009 a := 2;
+	IDENT | 	0050 | 	a
+   --> Entering Statement
+    --> Entering Variable
+	ASSIG | 	0037 | 	:=
+    <-- Exiting Variable
+	INCON | 	0051 | 	2
+    --> Entering SimpleExpression
+     --> Entering Term
+      --> Entering Factor
+       --> Entering Unsigned Constant
+        --> Entering UnsignedNumber
+	SEMCO | 	0036 | 	;
+        <-- Exiting UnsignedNumber
+       <-- Exiting Unsigned Constant
+      <-- Exiting Factor
+     <-- Exiting Term
+    <-- Exiting SimpleExpression
+   <-- Exiting Statement
+0010 b := 3;
+	IDENT | 	0050 | 	b
+   --> Entering Statement
+    --> Entering Variable
+	ASSIG | 	0037 | 	:=
+    <-- Exiting Variable
+	INCON | 	0051 | 	3
+    --> Entering SimpleExpression
+     --> Entering Term
+      --> Entering Factor
+       --> Entering Unsigned Constant
+        --> Entering UnsignedNumber
+	SEMCO | 	0036 | 	;
+        <-- Exiting UnsignedNumber
+       <-- Exiting Unsigned Constant
+      <-- Exiting Factor
+     <-- Exiting Term
+    <-- Exiting SimpleExpression
+   <-- Exiting Statement
+0011 a := a *(3+b)+ a + 2*b/2 - 1;  {The result: 16}
+	IDENT | 	0050 | 	a
+   --> Entering Statement
+    --> Entering Variable
+	ASSIG | 	0037 | 	:=
+    <-- Exiting Variable
+	IDENT | 	0050 | 	a
+    --> Entering SimpleExpression
+     --> Entering Term
+      --> Entering Factor
+       --> Entering Variable
+	ASTRK | 	0031 | 	*
+       <-- Exiting Variable
+      <-- Exiting Factor
+	OPARN | 	0034 | 	(
+      --> Entering Factor
+	INCON | 	0051 | 	3
+       --> Entering SimpleExpression
+        --> Entering Term
+         --> Entering Factor
+          --> Entering Unsigned Constant
+           --> Entering UnsignedNumber
+	ADDTN | 	0032 | 	+
+           <-- Exiting UnsignedNumber
+          <-- Exiting Unsigned Constant
+         <-- Exiting Factor
+        <-- Exiting Term
+	IDENT | 	0050 | 	b
+        --> Entering Term
+         --> Entering Factor
+          --> Entering Variable
+	CPARN | 	0035 | 	)
+          <-- Exiting Variable
+         <-- Exiting Factor
+        <-- Exiting Term
+       <-- Exiting SimpleExpression
+	ADDTN | 	0032 | 	+
+      <-- Exiting Factor
+     <-- Exiting Term
+	IDENT | 	0050 | 	a
+     --> Entering Term
+      --> Entering Factor
+       --> Entering Variable
+	ADDTN | 	0032 | 	+
+       <-- Exiting Variable
+      <-- Exiting Factor
+     <-- Exiting Term
+	INCON | 	0051 | 	2
+     --> Entering Term
+      --> Entering Factor
+       --> Entering Unsigned Constant
+        --> Entering UnsignedNumber
+	ASTRK | 	0031 | 	*
+        <-- Exiting UnsignedNumber
+       <-- Exiting Unsigned Constant
+      <-- Exiting Factor
+	IDENT | 	0050 | 	b
+      --> Entering Factor
+       --> Entering Variable
+	FSLAS | 	0030 | 	/
+       <-- Exiting Variable
+      <-- Exiting Factor
+	INCON | 	0051 | 	2
+      --> Entering Factor
+       --> Entering Unsigned Constant
+        --> Entering UnsignedNumber
+	SUBTN | 	0033 | 	-
+        <-- Exiting UnsignedNumber
+       <-- Exiting Unsigned Constant
+      <-- Exiting Factor
+     <-- Exiting Term
+	INCON | 	0051 | 	1
+     --> Entering Term
+      --> Entering Factor
+       --> Entering Unsigned Constant
+        --> Entering UnsignedNumber
+	SEMCO | 	0036 | 	;
+        <-- Exiting UnsignedNumber
+       <-- Exiting Unsigned Constant
+      <-- Exiting Factor
+     <-- Exiting Term
+    <-- Exiting SimpleExpression
+   <-- Exiting Statement
+0012 WRITELN("a is now ");
+	WRTLN | 	0009 | 	WRITELN
+   --> Entering Statement
+    --> Entering handleWriteln
+	OPARN | 	0034 | 	(
+	ST_12 | 	0053 | 	a is now 
+	CPARN | 	0035 | 	)
+	SEMCO | 	0036 | 	;
+    <-- Exiting handleWriteln
+   <-- Exiting Statement
+0013 WRITELN(a);
+	WRTLN | 	0009 | 	WRITELN
+   --> Entering Statement
+    --> Entering handleWriteln
+	OPARN | 	0034 | 	(
+	IDENT | 	0050 | 	a
+	CPARN | 	0035 | 	)
+	SEMCO | 	0036 | 	;
+    <-- Exiting handleWriteln
+   <-- Exiting Statement
+0014 WRITELN("Input a value of 25 for a: ");
+	WRTLN | 	0009 | 	WRITELN
+   --> Entering Statement
+    --> Entering handleWriteln
+	OPARN | 	0034 | 	(
+	ST_12 | 	0053 | 	Input a value of 25 for a: 
+	CPARN | 	0035 | 	)
+	SEMCO | 	0036 | 	;
+    <-- Exiting handleWriteln
+   <-- Exiting Statement
+0015 READLN(a);
+	REDLN | 	0010 | 	READLN
+   --> Entering Statement
+    --> Entering handleReadln
+	OPARN | 	0034 | 	(
+	IDENT | 	0050 | 	a
+     --> Entering Variable
+	CPARN | 	0035 | 	)
+     <-- Exiting Variable
+	SEMCO | 	0036 | 	;
+    <-- Exiting handleReadln
+   <-- Exiting Statement
+0016 WRITELN("After READLN, a is now ");
+	WRTLN | 	0009 | 	WRITELN
+   --> Entering Statement
+    --> Entering handleWriteln
+	OPARN | 	0034 | 	(
+	ST_12 | 	0053 | 	After READLN, a is now 
+	CPARN | 	0035 | 	)
+	SEMCO | 	0036 | 	;
+    <-- Exiting handleWriteln
+   <-- Exiting Statement
+0017 WRITELN(a);
+	WRTLN | 	0009 | 	WRITELN
+   --> Entering Statement
+    --> Entering handleWriteln
+	OPARN | 	0034 | 	(
+	IDENT | 	0050 | 	a
+	CPARN | 	0035 | 	)
+	SEMCO | 	0036 | 	;
+    <-- Exiting handleWriteln
+   <-- Exiting Statement
+0018 WRITELN("All done.")
+	WRTLN | 	0009 | 	WRITELN
+   --> Entering Statement
+    --> Entering handleWriteln
+	OPARN | 	0034 | 	(
+	ST_12 | 	0053 | 	All done.
+	CPARN | 	0035 | 	)
+0019 end. 
+	END_1 | 	0012 | 	end
+    <-- Exiting handleWriteln
+   <-- Exiting Statement
+	PERIO | 	0048 | 	.
+  <-- Exiting block-Body
+ <-- Exiting Block
+Success.
+<-- Exiting Program
+BASIC TEST File FA22
+String printout:  Hello World
+a is now 
+16
+Input a value of 25 for a: 
+> 

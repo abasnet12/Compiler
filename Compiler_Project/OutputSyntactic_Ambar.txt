@@ -1,0 +1,240 @@
+Syntactic for C:\Users\ambar\eclipse-workspace\Compiler_Project\GoodSyntaxA-FA22.txt
+Ambar Basnet, 959336, CS4100/5100, FALL 2022
+INPUT FILE TO PROCESS IS: C:\Users\ambar\eclipse-workspace\Compiler_Project\GoodSyntaxA-FA22.txt
+0001 
+0002 UNIT goodtree;
+	UNIT_ | 	0015 | 	UNIT
+--> Entering Program
+	IDENT | 	0050 | 	goodtree
+	SEMCO | 	0036 | 	;
+0003 
+0004 (* This Part A test file should have NO errors! *)
+0005 
+0006 BEGIN
+	BEGIN | 	0011 | 	BEGIN
+ --> Entering Block
+0007 { The only statements for Part A are ASSIGNMENTS with EXPRESSIONS }
+0008 
+0009 total:=3.14*radius*radius;
+	IDENT | 	0050 | 	total
+  --> Entering Statement
+   --> Entering handleAssignment
+    --> Entering Variable
+	ASSIG | 	0037 | 	:=
+    <-- Exiting Variable
+	FTCON | 	0052 | 	3.14
+    --> Entering SimpleExpression
+     --> Entering Term
+      --> Entering Factor
+       --> Entering Unsigned Constant
+        --> Entering UnsignedNumber
+	ASTRK | 	0031 | 	*
+        <-- Exiting UnsignedNumber
+       <-- Exiting Unsigned Constant
+      <-- Exiting Factor
+      --> Entering MulOp
+	IDENT | 	0050 | 	radius
+previousToken: ASSIG
+token.mnemonic: IDENT
+      <-- Exiting MulOp
+      --> Entering Factor
+       --> Entering Variable
+	ASTRK | 	0031 | 	*
+       <-- Exiting Variable
+      <-- Exiting Factor
+      --> Entering MulOp
+	IDENT | 	0050 | 	radius
+previousToken: ASTRK
+token.mnemonic: IDENT
+      <-- Exiting MulOp
+      --> Entering Factor
+       --> Entering Variable
+	SEMCO | 	0036 | 	;
+       <-- Exiting Variable
+      <-- Exiting Factor
+     <-- Exiting Term
+    <-- Exiting SimpleExpression
+   <-- Exiting handleAssignment
+  <-- Exiting Statement
+0010 
+0011 a :=(a+c)*(b-d)       ;
+	IDENT | 	0050 | 	a
+  --> Entering Statement
+   --> Entering handleAssignment
+    --> Entering Variable
+	ASSIG | 	0037 | 	:=
+    <-- Exiting Variable
+	OPARN | 	0034 | 	(
+    --> Entering SimpleExpression
+     --> Entering Term
+      --> Entering Factor
+	IDENT | 	0050 | 	a
+       --> Entering SimpleExpression
+        --> Entering Term
+         --> Entering Factor
+          --> Entering Variable
+	ADDTN | 	0032 | 	+
+          <-- Exiting Variable
+         <-- Exiting Factor
+        <-- Exiting Term
+        --> Entering AddOp
+	IDENT | 	0050 | 	c
+        <-- Exiting AddOp
+        --> Entering Term
+         --> Entering Factor
+          --> Entering Variable
+	CPARN | 	0035 | 	)
+          <-- Exiting Variable
+         <-- Exiting Factor
+        <-- Exiting Term
+       <-- Exiting SimpleExpression
+	ASTRK | 	0031 | 	*
+      <-- Exiting Factor
+      --> Entering MulOp
+	OPARN | 	0034 | 	(
+previousToken: CPARN
+token.mnemonic: OPARN
+      <-- Exiting MulOp
+      --> Entering Factor
+	IDENT | 	0050 | 	b
+       --> Entering SimpleExpression
+        --> Entering Term
+         --> Entering Factor
+          --> Entering Variable
+	SUBTN | 	0033 | 	-
+          <-- Exiting Variable
+         <-- Exiting Factor
+        <-- Exiting Term
+        --> Entering AddOp
+	IDENT | 	0050 | 	d
+        <-- Exiting AddOp
+        --> Entering Term
+         --> Entering Factor
+          --> Entering Variable
+	CPARN | 	0035 | 	)
+          <-- Exiting Variable
+         <-- Exiting Factor
+        <-- Exiting Term
+       <-- Exiting SimpleExpression
+	SEMCO | 	0036 | 	;
+      <-- Exiting Factor
+     <-- Exiting Term
+    <-- Exiting SimpleExpression
+   <-- Exiting handleAssignment
+  <-- Exiting Statement
+0012 
+0013 d1 := -b - ((2+4) + 2*34) * c / 2.5
+	IDENT | 	0050 | 	d1
+  --> Entering Statement
+   --> Entering handleAssignment
+    --> Entering Variable
+	ASSIG | 	0037 | 	:=
+    <-- Exiting Variable
+	SUBTN | 	0033 | 	-
+    --> Entering SimpleExpression
+     --> Entering Sign
+	IDENT | 	0050 | 	b
+     <-- Exiting Sign
+     --> Entering Term
+      --> Entering Factor
+       --> Entering Variable
+	SUBTN | 	0033 | 	-
+       <-- Exiting Variable
+      <-- Exiting Factor
+     <-- Exiting Term
+     --> Entering AddOp
+	OPARN | 	0034 | 	(
+     <-- Exiting AddOp
+     --> Entering Term
+      --> Entering Factor
+	OPARN | 	0034 | 	(
+       --> Entering SimpleExpression
+        --> Entering Term
+         --> Entering Factor
+	INCON | 	0051 | 	2
+          --> Entering SimpleExpression
+           --> Entering Term
+            --> Entering Factor
+             --> Entering Unsigned Constant
+              --> Entering UnsignedNumber
+	ADDTN | 	0032 | 	+
+              <-- Exiting UnsignedNumber
+             <-- Exiting Unsigned Constant
+            <-- Exiting Factor
+           <-- Exiting Term
+           --> Entering AddOp
+	INCON | 	0051 | 	4
+           <-- Exiting AddOp
+           --> Entering Term
+            --> Entering Factor
+             --> Entering Unsigned Constant
+              --> Entering UnsignedNumber
+	CPARN | 	0035 | 	)
+              <-- Exiting UnsignedNumber
+             <-- Exiting Unsigned Constant
+            <-- Exiting Factor
+           <-- Exiting Term
+          <-- Exiting SimpleExpression
+	ADDTN | 	0032 | 	+
+         <-- Exiting Factor
+        <-- Exiting Term
+        --> Entering AddOp
+	INCON | 	0051 | 	2
+        <-- Exiting AddOp
+        --> Entering Term
+         --> Entering Factor
+          --> Entering Unsigned Constant
+           --> Entering UnsignedNumber
+	ASTRK | 	0031 | 	*
+           <-- Exiting UnsignedNumber
+          <-- Exiting Unsigned Constant
+         <-- Exiting Factor
+         --> Entering MulOp
+	INCON | 	0051 | 	34
+previousToken: SUBTN
+token.mnemonic: INCON
+         <-- Exiting MulOp
+         --> Entering Factor
+          --> Entering Unsigned Constant
+           --> Entering UnsignedNumber
+	CPARN | 	0035 | 	)
+           <-- Exiting UnsignedNumber
+          <-- Exiting Unsigned Constant
+         <-- Exiting Factor
+        <-- Exiting Term
+       <-- Exiting SimpleExpression
+	ASTRK | 	0031 | 	*
+      <-- Exiting Factor
+      --> Entering MulOp
+	IDENT | 	0050 | 	c
+previousToken: SUBTN
+token.mnemonic: IDENT
+      <-- Exiting MulOp
+      --> Entering Factor
+       --> Entering Variable
+	FSLAS | 	0030 | 	/
+       <-- Exiting Variable
+      <-- Exiting Factor
+      --> Entering MulOp
+	FTCON | 	0052 | 	2.5
+previousToken: FSLAS
+token.mnemonic: FTCON
+      <-- Exiting MulOp
+      --> Entering Factor
+       --> Entering Unsigned Constant
+        --> Entering UnsignedNumber
+0014 
+0015 end.
+	END_1 | 	0012 | 	end
+        <-- Exiting UnsignedNumber
+       <-- Exiting Unsigned Constant
+      <-- Exiting Factor
+     <-- Exiting Term
+    <-- Exiting SimpleExpression
+   <-- Exiting handleAssignment
+  <-- Exiting Statement
+	PERIO | 	0048 | 	.
+ <-- Exiting Block
+Success.
+<-- Exiting Program
+Done.
